@@ -34,7 +34,7 @@ const google_map = async(req, res) => {
         //const data = JSON.parse(fs.readFileSync("csvjson.json"));
         //console.log(`Getting address for ${lat}, ${lng}...`);
         const { lat1, lng1 } = req.query
-        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat1},${lng1}&key=AIzaSyCk9wRPeLZuSkgyBsJVAqQSUz59VAj-CYg`)
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat1},${lng1}&key=${process.env.google_key}`)
             .then(response => {
                 var ShouldBeComponent = {
                     home: ["street_number"],
